@@ -1,1 +1,344 @@
---
+                                          ##########################################
+                                          ####Strings - Working with textual data###
+                                          ##########################################
+
+print("Hello World")
+
+message = 'Hello World'
+print(message)
+
+message = 'Python\'s World'
+print(message)
+
+message = "Python's World"
+print(message)
+
+message = """message = "Python's World"
+print(message)"""
+print(message)
+
+message = 'Hello World'
+print(len(message))
+
+message = 'Hello World'
+print(message[0]) # first index 
+print(message[10]) # last index
+#print(message[11]) #IndexError: string index out of range
+print(message[0:5])
+print(message[:5])
+print(message[6:])
+
+#string method
+#print(dir(str))
+#print(help(str))
+print(message.lower())
+print(message.count('Hello'))
+print(message.find('World'))
+print(message.find('Universe'))
+#message.replace('World','Universe')# we need assign to a variable
+message = message.replace('World','Universe')
+print(message)
+
+
+greeting = 'Hello'
+name = 'Python'
+message = greeting + ', '+ name + '. Welcome!'
+print(message)
+
+message = '{}, {}. Welcome!'.format(greeting,name)
+print(message)
+print(dir(message))
+
+
+                                          ###################################################
+                                          ####Interger & Float - Working with numeric data###
+                                          ###################################################
+
+#Arithmetic Operators:
+print('Arithmetic Operators:')
+a = 3
+b = 2
+Addition = a + b
+Substraction = a - b
+Multiplication = a * b
+Division = a / b
+Floor_Division = a // b
+Exponent = a ** b
+Modulus = a % b
+
+print('Addition : {}'.format(Addition))
+print('Substraction: {}'.format(Substraction))
+print('Multiplication: {}'.format(Multiplication))
+print('Division: {}'.format(Division))
+print('Floor_Division: {}'.format(Floor_Division))
+print('Exponent: {}'.format(Exponent))
+print('Modulus: {}'.format(Modulus))
+
+print()
+
+#Increament Operators:
+a = a + 1
+a += 1
+a -= 1
+a *+ 1
+a /= 1
+
+print('Increament Operators: {}'.format(Modulus))
+
+#round
+print('round Operators:')
+print(round(3.75843972374,2))
+print()
+
+#Comparisons Operators:
+print('Comparisons Operators:')
+print('Equal : {}'.format(a == b))
+print('Not Equal : {}'.format(a != b))
+print('Greater Than : {}'.format(a > b))
+print('Less Than : {}'.format(a < b))
+print('Greater Than or Equal : {}'.format(a >= b))
+print('Less Than or Equal : {}'.format(a <= b))
+print()
+
+print('Casting:')
+num_1 = '100'
+num_2 = '200'
+print(num_1+num_2)
+print(int(num_1)+int(num_2))
+
+
+                                          ###################################################
+                                          ##############Lists, Tuple and Sets################
+                                          ###################################################
+
+courses = ['History','Math','Physics','CompSci']
+#print(courses)
+#print(len(courses))
+#print(dir(courses))
+
+#List - Mutable
+
+print('List:')
+
+dirs = ['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+print(dirs)
+print(len(dirs))
+print(dirs[0])
+print(dirs[10])
+print(dirs[0:2])
+print(dirs[:2])
+print(dirs[9:])
+print()
+dirs.append('testing1')
+print(dirs)
+
+dirs.insert(0,'testing1')
+print(dirs)
+
+dirs.insert(0,courses) # extend need to use here
+print(dirs)
+
+dirs.append(courses) # extend need to use here
+print(dirs)
+
+dirs.extend(courses) 
+print(dirs)
+
+popped = dirs.pop()
+print(popped)
+print(dirs)
+
+dirs.reverse()
+print(dirs)
+
+
+nums = [1,3,5,2,6]
+nums.sort(reverse=True)#not recommended
+print(nums)
+
+sorted_nums = sorted(nums)
+print(sorted_nums)
+
+print(min(nums))
+print(max(nums))
+print(sum(nums))
+
+print(dirs.index('count'))
+
+print('count' in dirs)
+
+for idx in dirs:
+    print(idx)
+
+for idx,value in enumerate(dirs):
+    print(idx, value)
+    
+for idx,value in enumerate(dirs,start=1):
+    print(idx, value)
+
+courses_str = ', '.join(courses)
+print(courses_str)
+
+new_courses_str = courses_str.split(', ')
+print(new_courses_str)
+
+list_1 = ['a','b','c','d']
+list_2 = list_1
+print(list_1)
+print(list_2)
+list_1[0] = 'z'
+
+print(list_1)
+print(list_2)
+
+#Tuple - Immutable
+
+tuple_1 = ('a','b','c','d')
+tuple_2 = tuple_1
+print(tuple_1)
+print(tuple_2)
+#tuple_2[0] = 'z' #TypeError: 'tuple' object does not support item assignment
+
+print(tuple_1)
+print(tuple_2)
+
+#Sets - Unordered
+Sets_1 = {'a','b','c','d','d'}
+Sets_2 = {'a','z','d','d'}
+print(Sets_1)
+print('a' in Sets_1)
+print(Sets_1.intersection(Sets_2))
+print(Sets_1.difference(Sets_2))
+print(Sets_1.union(Sets_2))
+
+#How to create empty list, tuple and sets
+empty_list = []
+empty_list = list()
+
+empty_tuple = ()
+empty_tuple = tuple()
+
+empty_set = {} #it is a dict.
+empty_set = set()
+
+
+                                          ###########################################################
+                                          ##############Dictionaries - Working with key-values pairs#
+                                          ###########################################################
+student = {'name':'john','age':25,'courses':['Math','CompSci']}
+print(student)
+print(student['courses'])
+print(student.get('phone','Not Found!'))
+student.update({'name':'Jane','phone':'444-444-444'})
+print(student)
+
+
+print(len(student))
+print(student.keys())
+print(student.values())
+print(student.items())
+
+for idx in student:
+    print(idx)
+
+for key,value in student.items():
+    print(key,value)
+    
+  
+                                          ###########################################################
+                                          ##############Conditionals and Boolean: If, elif and else##
+                                          ###########################################################
+
+if True:
+    print('Conditional was True.')
+
+if False:
+    print('Conditional was True.')
+
+language = 'Unix'   
+
+if language == 'Python' :
+    print('Language is Python.')
+else:
+     print('No Match')
+
+if language == 'Python' :
+    print('Language is Python.')
+elif language == 'Unix' :
+     print('Language is Unix.')
+else:
+     print('No Match')
+
+#Boolean Operators:
+
+user = 'Admin'
+logged_in = True
+
+if user == 'Admin' and logged_in:
+    print('Admin Page')
+else:
+    print('Bad Credential.')
+
+if user == 'Admin' or logged_in:
+    print('Admin Page')
+else:
+    print('Bad Credential.')
+
+if not logged_in:
+    print('please log in')
+else:
+    print('Welcome')
+
+a = [1,2,3]
+b = [1,2,3]
+
+print(a==b)
+print(a is b)
+c = b
+print(id(b))
+print(id(c))
+print(b is c)
+
+#False values:
+condition = False
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+
+condition = None
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+condition = 0
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+condition = ''
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+condition = []
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+condition = ()
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
+
+condition = {}
+if condition:
+    print('Evaluated to True')
+else:
+    print('Evaluated to false')
