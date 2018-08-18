@@ -560,3 +560,315 @@ def outer():
 
 outer()
 
+
+                                          ################################################################
+                                          ############## Slicing Lists and String ########################
+                                          ################################################################
+
+int_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#           0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+#         -10,-9,-8,-7,-6,-5,-4,-3,-2,-1
+
+print(int_list)
+print(int_list[0])
+print(int_list[5])
+print(int_list[-1])
+print(int_list[-10])
+print(int_list[0:5])
+print(int_list[3:8])
+print(int_list[-7:1]) #
+print(int_list[-9:3])
+print(int_list[2:-1])
+print(int_list[2:-1:2])
+print(int_list[-1:2:-1])
+print(int_list[-2:2:-2])
+print(int_list[::-2])
+print()
+
+#string
+string = 'https://www.google.co.in/'
+print(len(string)) #25
+print(string[12:18])
+print(string[-13:-7])
+print(string[8:24])
+
+a,b,c,d= string[8:24].split('.')
+print('{3}.{2}.{1}.{0}'.format(a,b,c,d))
+print()
+#list comprehensions
+
+nums = [1,2,3,4,5,6,7,8,9,10]
+
+my_list1 = []
+
+for n in nums:
+    my_list1.append(n)
+print(my_list1)
+
+my_list2 = []
+my_list2 = [n for n in nums]
+print(my_list1)
+print()
+
+my_list3 = []
+my_list3 = [n*n for n in nums]
+print(my_list3)
+print()
+
+
+my_list5 = []
+my_list5 = [n*n for n in nums if n % 2 == 0]
+print(my_list5)
+print()
+
+my_list6 = []
+my_list6 = [n*n for n in nums if n % 2 != 0]
+print(my_list6)
+print()
+
+my_list8 = []
+for letter in 'abcd':
+    for num in range(4):
+        my_list8.append((letter,num))
+print(my_list8)
+print()
+
+my_list8 = [(letter,num) for letter in 'abcd' for num in range(4)]
+print(my_list8)
+print()
+
+
+country = ['Afghanistan ', 'Albania ', 'Algeria ', 'Andorra ', 'Angola', 'Antigua and Barbuda ', 'Argentina', 'Armenia ', 'Australia', 'Austria ', 'Azerbaijan', 'Bahamas ', 'Bahrain ', 'Bangladesh', 'Barbados', 'Belarus ', 'Belgium ', 'Belize', 'Benin', 'Bhutan', 'Bolivia ', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi ', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad ', 'Chile', 'China', 'Colombia', 'Comoros ', 'Congo, Democratic Republic of the ', 'Congo, Republic of the', 'Costa Rica', 'Cote d\'Ivoire ', 'Croatia ', 'Cuba ', 'Cyprus', 'Czech Republic', 'Denmark ', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador ', 'Egypt', 'El Salvador ', 'England ', 'Equatorial Guinea ', 'Eritrea ', 'Estonia ', 'Ethiopia', 'Federated States of Micronesia', 'Fiji ', 'Finland ', 'France', 'French Guiana ', 'Gabon', 'Gambia', 'Georgia ', 'Germany ', 'Ghana', 'Greece', 'Grenada ', 'Guatemala', 'Guinea', 'Guinea-Bissau ', 'Guyana', 'Haiti', 'Honduras', 'Hungary ', 'Iceland ', 'India', 'Indonesia', 'Iran ', 'Iraq ', 'Ireland ', 'Israel', 'Italy', 'Jamaica ', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos ', 'Latvia', 'Lebanon ', 'Lesotho ', 'Liberia ', 'Libya', 'Liechtenstein ', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali ', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova ', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco ', 'Mozambique', 'Myanmar (Burma) ', 'Namibia ', 'Nauru', 'Nepal', 'Netherlands ', 'New Zealand ', 'Nicaragua', 'Niger', 'Nigeria ', 'North Korea ', 'Northern Ireland', 'Norway', 'Oman ', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru ', 'Philippines ', 'Poland', 'Portugal', 'Qatar', 'Romania ', 'Russia', 'Rwanda', 'Saint Kitts and Nevis ', 'Saint Lucia ', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe ', 'Saudi Arabia', 'Scotland', 'Senegal ', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands ', 'Somalia ', 'South Africa', 'South Korea ', 'South Sudan ', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland ', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo ', 'Tonga', 'Trinidad and Tobago ', 'Tunisia ', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine ', 'United Arab Emirates', 'United Kingdom', 'United States ', 'Uruguay ', 'Uzbekistan', 'Vanuatu ', 'Vatican City', 'Venezuela', 'Vietnam ', 'Wales', 'Yemen', 'Zambia', 'Zimbabwe']
+capital = ['Kabul', 'Tirana(Tirane)', 'Algiers', 'AndorralaVella', 'Luanda', 'SaintJohn\'s', 'BuenosAires', 'Yerevan', 'Canberra', 'Vienna', 'Baku', 'Nassau', 'Manama', 'Dhaka', 'Bridgetown', 'Minsk', 'Brussels', 'Belmopan', 'PortoNovo', 'Thimphu', 'LaPaz', 'Sarajevo', 'Gaborone', 'Brasilia', 'BandarSeriBegawan', 'Sofia', 'Ouagadougou', 'Bujumbura', 'PhnomPenh', 'Yaounde', 'Ottawa', 'Praia', 'Bangui', 'N\'Djamena', 'Santiago', 'Beijing', 'Bogota', 'Moroni', 'Kinshasa', 'Brazzaville', 'SanJose', 'Yamoussoukro', 'Zagreb', 'Havana', 'Nicosia', 'Prague', 'Copenhagen', 'Djibouti', 'Roseau', 'SantoDomingo', 'Dili', 'Quito', 'Cairo', 'SanSalvador', 'London', 'Malabo', 'Asmara', 'Tallinn', 'AddisAbaba', 'Palikir', 'Suva', 'Helsinki', 'Paris', 'Cayenne', 'Libreville', 'Banjul', 'Tbilisi', 'Berlin', 'Accra', 'Athens', 'SaintGeorge\'s', 'GuatemalaCity', 'Conakry', 'Bissau', 'Georgetown', 'PortauPrince', 'Tegucigalpa', 'Budapest', 'Reykjavik', 'NewDelhi', 'Jakarta', 'Tehran', 'Baghdad', 'Dublin', 'TelAviv1', 'Rome', 'Kingston', 'Tokyo', 'Amman', 'Astana', 'Nairobi', 'TarawaAtoll', 'Pristina', 'KuwaitCity', 'Bishkek', 'Vientiane', 'Riga', 'Beirut', 'Maseru', 'Monrovia', 'Tripoli', 'Vaduz', 'Vilnius', 'Luxembourg', 'Skopje', 'Antananarivo', 'Lilongwe', 'KualaLumpur', 'Male', 'Bamako', 'Valletta', 'Majuro', 'Nouakchott', 'PortLouis', 'MexicoCity', 'Chisinau', 'Monaco', 'Ulaanbaatar', 'Podgorica', 'Rabat', 'Maputo', 'NayPyiTaw2', 'Windhoek', 'Noofficialcapital', 'Kathmandu', 'Amsterdam', 'Wellington', 'Managua', 'Niamey', 'Abuja', 'Pyongyang', 'Belfast', 'Oslo', 'Muscat', 'Islamabad', 'Melekeok', 'PanamaCity', 'PortMoresby', 'Asuncion', 'Lima', 'Manila', 'Warsaw', 'Lisbon', 'Doha', 'Bucharest', 'Moscow', 'Kigali', 'Basseterre', 'Castries', 'Kingstown', 'Apia', 'SanMarino', 'SaoTome', 'Riyadh', 'Edinburgh', 'Dakar', 'Belgrade', 'Victoria', 'Freetown', 'Singapore', 'Bratislava', 'Ljubljana', 'Honiara', 'Mogadishu', 'Pretoria', 'Seoul', 'Juba', 'Madrid', 'Colombo', 'Khartoum', 'Paramaribo', 'Mbabana', 'Stockholm', 'Bern', 'Damascus', 'Taipei', 'Dushanbe', 'Dodoma3', 'Bangkok', 'Lome', 'Nuku\'alofa', 'PortofSpain', 'Tunis', 'Ankara', 'Ashgabat', 'Funafuti4', 'Kampala', 'Kiev', 'AbuDhabi', 'London', 'WashingtonD.C.', 'Montevideo', 'Tashkent', 'PortVila', 'VaticanCity', 'Caracas', 'Hanoi', 'Cardiff', 'Sanaa', 'Lusaka', 'Harare']
+
+my_dict1 = {}
+for country,capital in zip(country,capital):
+    my_dict1[country] = capital
+#print(my_dict1)
+
+
+                                          ################################################################
+                                          ############## Sorting Lists, Tuple and Objects ################
+                                          ################################################################
+
+#List
+li = [9,1,8,2,7,3,6,4,5]
+
+s_li = sorted(li) # ,reverse=True
+print('Sorted variable with sorted',s_li)
+print('Original variable ',li)
+li.sort()
+print('Sorted variable with sort',s_li)
+print('Original variable ',li)
+print()
+
+neg_li = [-6,-4,-5,1,2,3]
+s_neg_li = sorted(neg_li)
+print('Original variable ',neg_li)
+print('Sorted variable with sorted',s_neg_li)
+s_neg_li2 = sorted(neg_li,key=abs)
+print('Sorted variable with sorted',s_neg_li2)
+
+print()
+
+s_li = sorted(li,reverse=True) 
+print('Sorted variable with sorted',s_li)
+print('Original variable ',li)
+li.sort(reverse=True)
+print('Sorted variable with sort',s_li)
+print('Original variable ',li)
+print()
+
+#tuple
+tup = (9,1,8,2,7,3,6,4,5)
+
+#tuple don't have sort method
+s_tup = sorted(tup)
+print('Sorted variable with sorted ',s_tup)
+print()
+
+#dictionay
+di = {'name':'John','job':'developer','age':None,'os':'unix'}
+
+s_di = sorted(di)
+print('Sorted variable with sorted ',s_di)
+print()
+
+class Employee():
+    def __init__(self,name,age,salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def __repr__(self):
+        return '({},{},${})'.format(self.name,self.age,self.salary)
+
+e1 = Employee('John',23,10000)
+e2 = Employee('Bill',34,40000)
+e3 = Employee('James',27,30000)
+
+def e_sort_name(emp):
+    return emp.name
+def e_sort_age(emp):
+    return emp.name
+def e_sort_salary(emp):
+    return emp.name
+
+employee = [e1,e2,e3]
+s_employee1 = sorted(employee,key=e_sort_name)
+print(s_employee1)
+s_employee2 = sorted(employee,key=e_sort_age,reverse=True)
+print(s_employee2)
+s_employee3 = sorted(employee,key=e_sort_salary,reverse=True)
+print(s_employee3)
+
+s_employee4 = sorted(employee,key=lambda e: e.name)
+print(s_employee4)
+
+from operator import attrgetter
+
+s_employee5 = sorted(employee,key=attrgetter('age'))
+print(s_employee5)
+
+
+                                          ################################################################
+                                          ############## String formating ################################
+                                          ################################################################
+person = {'name': 'Jenn','age':23}
+sentence1 = 'My name is ' + person['name'] + ' and I am ' + str(person['age']) + ' year old.'
+print(sentence1)
+print()
+
+sentence2 = 'My name is {}  and I am {} years old.'.format(person['name'],str(person['age']))
+print(sentence2)
+print()
+
+tag = 'h1'
+text = 'this is a headline'
+sentence3 = '<{0}>{1}</{0}>'.format(tag,text)
+print(sentence3)
+print()
+
+sentence4 = 'My name is {0[name]}  and I am {0[age]} years old.'.format(person)
+print(sentence4)
+print()
+
+li = ['Jenn',23]
+sentence5 = 'My name is {0[0]}  and I am {0[1]} years old.'.format(li)
+print(sentence5)
+print()
+
+
+class Person():
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+p1 = Person('Jack','33')
+
+sentence6 = 'My name is {0.name}  and I am {0.age} years old.'.format(p1)
+print(sentence6)
+print()
+
+sentence6 = 'My name is {name}  and I am {age} years old.'.format(name='Jenn',age='34')
+print(sentence6)
+print()
+
+sentence7 = 'My name is {name}  and I am {age} years old.'.format(**person)
+print(sentence7)
+print()
+
+#Number
+for i in range(1,11):
+    sentence8 = 'The value is {:02}'.format(i)
+    print(sentence8)
+print()
+
+for i in range(1,11):
+    sentence8 = 'The value is {:03}'.format(i)
+    print(sentence8)
+print()
+
+pi = 3.14159265
+sentence9 = 'Pi is equal to {:.2f}'.format(pi)
+print(sentence9)
+print()
+
+sentence10 = '1 MB is equal to {:,}'.format(1024**2)
+print(sentence10)
+print()
+
+sentence11 = '1 MB is equal to {:,.2f}'.format(1024**2)
+print(sentence11)
+print()
+
+#https://docs.python.org/3/library/datetime.html
+
+import datetime
+my_date = datetime.datetime(2018,8,18,10,56,23)
+print(my_date)
+sentence12 = '{:%B %d, %Y}'.format(my_date)
+print(sentence12)
+sentence12 = '{0:%B %d, %Y} fell on a {0:%A} and was the {0:%j} day of the year'.format(my_date)
+print(sentence12)
+print()
+
+
+                                          ################################################################
+                                          ############## OS Module #######################################
+                                          ################################################################
+import os
+from datetime import datetime
+
+#print(dir(os))
+
+print(os.getcwd())
+
+os.chdir('E:\Hadoop\learning\git')
+print(os.getcwd())
+print(os.listdir())
+
+#os.mkdir('OS-Demo-2')
+#os.makedirs('OS-Demo-2/Sub-Dir-2')
+print(os.listdir())
+print()
+
+#os.rmdir('OS-Demo-2')
+#os.removedirs('OS-Demo-2/Sub-Dir-2')
+print(os.listdir())
+print()
+#os.rename('demo.txt','test.txt')
+print(os.listdir())
+print(os.stat('test.txt'))
+mod_time = os.stat('test.txt').st_mtime
+print(datetime.fromtimestamp(mod_time))
+print()
+
+
+#for dirpath, dirnames, filenames in os.walk(os.getcwd()):
+#    print(dirpath, dirnames, filenames)
+
+for dirpath, dirnames, filenames in os.walk('E:\Hadoop\learning\git\python'):
+    print(dirpath, dirnames, filenames)
+print()
+
+print(os.environ.get('HOME'))
+print()
+
+file_path = os.environ.get('HOME') + 'test.txt'
+print(file_path)
+
+file_path2 = os.path.join(os.environ.get('HOME'),'test.txt')
+print(file_path2)
+print()
+
+print(os.path.basename('E:\Hadoop\learning\git\python'))
+print(os.path.split('E:\Hadoop\learning\git\python'))
+print(os.path.exists('E:\Hadoop\learning\git\python'))
+print(os.path.isdir('E:\Hadoop\learning\git\python'))
+print(os.path.isfile('E:\Hadoop\learning\git\python'))
+print(os.path.splitext('E:\Hadoop\learning\git\test.txt'))
+print()
+print(dir(os.path))
+
+
